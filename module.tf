@@ -6,7 +6,7 @@ resource "spacelift_module" "proxmox_virtual_machine_simple" {
   description        = "Virtual Machine (Simple)"
   repository         = "terraform"
   project_root       = "modules/proxmox/virtual_machine_simple"
-  labels             = ["infrastructure", "proxmox"]
+  labels             = ["infra", "proxmox"]
 }
 
 resource "spacelift_module" "fortigate_vip" {
