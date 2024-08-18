@@ -1,13 +1,13 @@
-# resource "spacelift_module" "proxmox_virtual_machine" {
-#   name               = "virtual_machine"
-#   terraform_provider = "proxmox"
-#   administrative     = false
-#   branch             = "main"
-#   description        = "Virtual Machine (Simple)"
-#   repository         = "terraform"
-#   project_root       = "modules/proxmox/virtual_machine"
-#   labels             = ["infra", "proxmox"]
-# }
+resource "spacelift_module" "proxmox_virtual_machine" {
+  name               = "virtual_machine"
+  terraform_provider = "proxmox"
+  administrative     = false
+  branch             = "main"
+  description        = "Virtual Machine"
+  repository         = "nodadyoushutup-terraform/module"
+  project_root       = "proxmox/virtual_machine"
+  labels             = ["infra", "proxmox"]
+}
 
 # resource "spacelift_module" "fortigate_vip" {
 #   name               = "vip"
