@@ -10,9 +10,7 @@ data "spacelift_stack" "proxmox_infra" {
   stack_id = "proxmox_infra"
 }
 
-data "spacelift_stacks" "stacks" {
-  # stack_id = "proxmox_infra"
-}
+data "spacelift_stacks" "stacks" {}
 
 output "stacks" {
   value = data.spacelift_stacks.stacks
