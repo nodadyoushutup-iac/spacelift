@@ -6,7 +6,7 @@ output "yaml" {
 
 resource "spacelift_stack" "stack" {
   for_each = {
-    for stack in local.spacelift.stack : stack.name => stack
+    for stack in local.spacelift.stack : stack.stack_id => stack
   }
 
   space_id = each.value.space_id
