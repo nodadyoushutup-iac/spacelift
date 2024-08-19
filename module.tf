@@ -1,55 +1,55 @@
-resource "spacelift_module" "proxmox_virtual_machine" {
-    name = "virtual_machine"
-    terraform_provider = "proxmox"
-    administrative = false
-    branch = "main"
-    description = "Virtual Machine"
-    repository = "module"
-    project_root = "proxmox/virtual_machine"
-    labels = ["infra", "proxmox"]
-    github_enterprise { 
-        namespace = "nodadyoushutup-terraform"
-    }
-}
+# resource "spacelift_module" "proxmox_virtual_machine" {
+#     name = "virtual_machine"
+#     terraform_provider = "proxmox"
+#     administrative = false
+#     branch = "main"
+#     description = "Virtual Machine"
+#     repository = "module"
+#     project_root = "proxmox/virtual_machine"
+#     labels = ["infra", "proxmox"]
+#     github_enterprise { 
+#         namespace = "nodadyoushutup-terraform"
+#     }
+# }
 
-resource "spacelift_module" "fortigate_vip" {
-    name               = "vip"
-    terraform_provider = "fortigate"
-    administrative     = false
-    branch             = "main"
-    description        = "Fortigate Firewall Virtual IP"
-    repository         = "module"
-    project_root       = "fortigate/vip"
-    labels             = ["config", "fortigate"]
-    github_enterprise { 
-        namespace = "nodadyoushutup-terraform"
-    }   
-}
+# resource "spacelift_module" "fortigate_vip" {
+#     name               = "vip"
+#     terraform_provider = "fortigate"
+#     administrative     = false
+#     branch             = "main"
+#     description        = "Fortigate Firewall Virtual IP"
+#     repository         = "module"
+#     project_root       = "fortigate/vip"
+#     labels             = ["config", "fortigate"]
+#     github_enterprise { 
+#         namespace = "nodadyoushutup-terraform"
+#     }   
+# }
 
-resource "spacelift_module" "fortigate_policy" {
-    name               = "policy"
-    terraform_provider = "fortigate"
-    administrative     = false
-    branch             = "main"
-    description        = "Fortigate Firewall Policy"
-    repository         = "module"
-    project_root       = "fortigate/policy"
-    labels             = ["config", "fortigate"]
-    github_enterprise { 
-        namespace = "nodadyoushutup-terraform"
-    }
-}
+# resource "spacelift_module" "fortigate_policy" {
+#     name               = "policy"
+#     terraform_provider = "fortigate"
+#     administrative     = false
+#     branch             = "main"
+#     description        = "Fortigate Firewall Policy"
+#     repository         = "module"
+#     project_root       = "fortigate/policy"
+#     labels             = ["config", "fortigate"]
+#     github_enterprise { 
+#         namespace = "nodadyoushutup-terraform"
+#     }
+# }
 
-resource "spacelift_module" "fortigate_port_forward" {
-    name               = "port_forward"
-    terraform_provider = "fortigate"
-    administrative     = false
-    branch             = "main"
-    description        = "Fortigate Port Forward"
-    repository         = "module"
-    project_root       = "fortigate/port_forward"
-    labels             = ["config", "fortigate"]
-    github_enterprise { 
-        namespace = "nodadyoushutup-terraform"
-    }
-}
+# resource "spacelift_module" "fortigate_port_forward" {
+#     name               = "port_forward"
+#     terraform_provider = "fortigate"
+#     administrative     = false
+#     branch             = "main"
+#     description        = "Fortigate Port Forward"
+#     repository         = "module"
+#     project_root       = "fortigate/port_forward"
+#     labels             = ["config", "fortigate"]
+#     github_enterprise { 
+#         namespace = "nodadyoushutup-terraform"
+#     }
+# }
