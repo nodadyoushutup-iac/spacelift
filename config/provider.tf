@@ -1,4 +1,4 @@
-# provider.tf
+# config/provider.tf
 
 terraform {
   required_providers {
