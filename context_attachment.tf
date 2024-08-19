@@ -19,5 +19,5 @@ output "spacelift_context" {
 }
 
 output "spacelift_stack" {
-  value = data.spacelift_context.spacelift
+  value = data.spacelift_context.provider
 }
