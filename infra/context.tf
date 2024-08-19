@@ -29,3 +29,9 @@ resource "spacelift_context" "database" {
   name = "database"
   space_id = data.spacelift_space.infra.id
 }
+
+resource "spacelift_context" "vault" {
+  description = "Vault congfiguration"
+  name = "vault"
+  space_id = data.spacelift_space.infra.id
+}
