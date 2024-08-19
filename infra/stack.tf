@@ -4,7 +4,7 @@ output "yaml" {
   value = local.spacelift.stack
 }
 
-resource "spacelift_stack" "stack" {
+resource "spacelift_stack" "stack2" {
   # for_each = {
   #   for stack in local.spacelift.stack : stack.stack_id => stack
   # }
