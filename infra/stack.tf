@@ -12,7 +12,7 @@ resource "spacelift_stack" "stack" {
   repository = each.value.repository
   project_root = each.value.project_root
   terraform_version = each.value.terraform_version
-  labels = each.value.labels
+  labels = concat(each.value.labels, ["all"])
   github_enterprise { 
     namespace = each.value.enterprise
   }
