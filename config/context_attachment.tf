@@ -12,6 +12,13 @@ data "spacelift_stacks" "all" {
 #   }
 # }
 
+data "spacelift_stacks" "virtual_machine" {
+  labels {
+    any_of = ["virtual_machine"]
+  }
+}
+
+
 data "spacelift_stacks" "database" {
   labels {
     any_of = ["database"]
@@ -45,6 +52,15 @@ resource "spacelift_context_attachment" "context_attachment_provider_all" {
 #   stack_id   = each.value.stack_id
 #   priority   = 0
 # }
+
+resource "spacelift_context_attachment" "context_attachment_virtual_machine_virtual_machine" {
+  for_each = {
+    for stack in data.spacelift_stacks.database.stacks : stack.stack_id => stack
+  }
+  context_id = "virtual_machine"
+  stack_id   = each.value.stack_id
+  priority   = 0
+}
 
 resource "spacelift_context_attachment" "context_attachment_database_database" {
   for_each = {
