@@ -4,7 +4,7 @@ resource "spacelift_stack" "stack" {
   for_each = local.spacelift.stack
 
   space_id = spacelift_space.infra.id
-  administrative  = false
+  administrative  = each.value.administrative
   autodeploy = each.value.autodeploy
   branch = each.value.branch
   description = each.value.description
