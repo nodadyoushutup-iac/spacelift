@@ -15,5 +15,5 @@ data "spacelift_stacks" "stacks" {
 }
 
 output "stacks" {
-  value = data.spacelift_stacks
+  value = data.spacelift_stacks.stacks
 }
