@@ -1,5 +1,5 @@
 data "spacelift_context" "debug" {
-  context_id = "debug2"
+  context_id = "debug"
 }
 
 data "spacelift_context" "provider" {
@@ -8,4 +8,12 @@ data "spacelift_context" "provider" {
 
 data "spacelift_stack" "proxmox_infra" {
   stack_id = "proxmox_infra"
+}
+
+data "spacelift_stacks" "stacks" {
+  # stack_id = "proxmox_infra"
+}
+
+output "stacks" {
+  value = data.spacelift_stacks
 }
