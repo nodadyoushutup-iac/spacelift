@@ -1,8 +1,8 @@
 # # context.tf
 
-# data "spacelift_space" "provider" {
-#   space_id = "provider"
-# }
+data "spacelift_space" "provider" {
+  space_id = "provider"
+}
 
 # data "spacelift_space" "infra" {
 #   space_id = "infra"
@@ -14,11 +14,11 @@
 
 
 
-# resource "spacelift_context" "provider" {
-#   description = "Provider congfiguration"
-#   name = "provider"
-#   space_id = "root"
-# }
+resource "spacelift_context" "provider" {
+  description = "Provider congfiguration"
+  name = "provider"
+  space_id = data.spacelift_space.provider.id
+}
 
 # resource "spacelift_context" "spacelift" {
 #   description = "Spacelift configuration"
