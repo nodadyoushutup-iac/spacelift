@@ -10,6 +10,7 @@ resource "spacelift_stack" "stack" {
   description = each.value.description
   name = each.value.name
   repository = each.value.repository
+  project_root = each.value.project_root
   terraform_version = each.value.terraform_version
   labels = each.value.labels
   github_enterprise { 
