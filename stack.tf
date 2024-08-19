@@ -1,20 +1,18 @@
 # stack.tf
 
-# data "spacelift_space" "infra" {
-#   space_id = spacelift_space.infra.id
-# }
+resource "spacelift_stack" "stack" {
+  for_each = local.spacelift.stack
 
-resource "spacelift_stack" "proxmox_infra" {
   space_id = spacelift_space.infra.id
-  administrative = false
-  autodeploy = true
-  branch = "main"
-  description = "Proxmox infrastructure"
-  name = "proxmox_infra"
-  repository = "proxmox"
-  terraform_version = "1.5.7"
-  labels = ["infra", "proxmox", "pve"]
+  administrative  = false
+  autodeploy = each.value.autodeploy
+  branch = each.value.branch
+  description = each.value.description
+  name = each.value.name
+  repository = each.value.repository
+  terraform_version = each.value.terraform_version
+  labels = each.value.labels
   github_enterprise { 
-        namespace = "nodadyoushutup-terraform"
-    }
+    namespace = each.value.enterprise
+  }
 }
