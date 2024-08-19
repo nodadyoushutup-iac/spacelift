@@ -7,7 +7,7 @@ output "stacks" {
 }
 
 resource "spacelift_context_attachment" "context_attachment_debug" {
-  for_each = data.spacelift_stacks.stacks
+  for_each = data.spacelift_stacks.stacks.stacks
 
   context_id = "debug"
   stack_id   = each.value.stack_id
