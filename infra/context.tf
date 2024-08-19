@@ -15,23 +15,23 @@ resource "spacelift_context" "provider" {
 resource "spacelift_context" "spacelift" {
   description = "Spacelift congfiguration"
   name = "spacelift"
-  space_id = data.spacelift_space.config.id
+  space_id = "root"
 }
 
 resource "spacelift_context" "virtual_machine" {
   description = "Virtual Machine congfiguration"
   name = "virtual_machine"
-  space_id = data.spacelift_space.infra.id
+  space_id = "root"
 }
 
 resource "spacelift_context" "database" {
   description = "Database congfiguration"
   name = "database"
-  space_id = data.spacelift_space.infra.id
+  space_id = "root"
 }
 
 resource "spacelift_context" "vault" {
   description = "Vault congfiguration"
   name = "vault"
-  space_id = data.spacelift_space.infra.id
+  space_id = "root"
 }
