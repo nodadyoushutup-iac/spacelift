@@ -3,7 +3,7 @@
 data "spacelift_stacks" "stacks" {}
 
 output "stacks" {
-  value = data.spacelift_stacks.stacks
+  value = data.spacelift_stacks.stacks.stacks
 }
 
 # resource "spacelift_context_attachment" "context_attachment_debug" {
