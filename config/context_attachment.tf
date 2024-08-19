@@ -1,9 +1,11 @@
 # context_attachment.tf
 
-data "spacelift_stacks" "stacks" {}
+data "spacelift_stacks" "stacks" {
+  labels = ["all"]
+}
 
 output "stacks" {
-  value = { for stack in data.spacelift_stacks.stacks.stacks : stack.stack_id => stack }
+  value = data.spacelift_stacks.stacks
 }
 
 
