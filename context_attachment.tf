@@ -15,6 +15,10 @@ data "spacelift_context" "spacelift" {
 # }
 
 
+output "spacelift_stack" {
+  value = data.spacelift_context.spacelift
+}
+
 output "spacelift_context" {
   value = data.spacelift_context.spacelift
 }
