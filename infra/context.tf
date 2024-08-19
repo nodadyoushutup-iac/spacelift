@@ -15,7 +15,7 @@ resource "spacelift_context" "provider" {
 resource "spacelift_context" "spacelift" {
   description = "Spacelift congfiguration"
   name = "spacelift"
-  space_id = data.spacelift_space.infra.id
+  space_id = data.spacelift_space.config.id
 }
 
 resource "spacelift_context" "virtual_machine" {
