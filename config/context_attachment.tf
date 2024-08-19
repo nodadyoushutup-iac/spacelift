@@ -1,7 +1,7 @@
 # context_attachment.tf
 
 data "spacelift_stacks" "stacks" {
-  labels = {
+  labels {
     any_of = ["all"]
   }
 }
