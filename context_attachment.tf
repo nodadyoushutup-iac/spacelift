@@ -1,11 +1,11 @@
 # # context_attachment.tf
 
-data "spacelift_stack" "spacelift" {
-  stack_id = "spacelift"
+data "spacelift_stack" "proxmox_infra" {
+  stack_id = "proxmox_infra"
 }
 
-data "spacelift_context" "spacelift" {
-  context_id = "spacelift"
+data "spacelift_context" "provider" {
+  context_id = "provider"
 }
 
 # resource "spacelift_context_attachment" "spacelift_spacelift" {
@@ -20,5 +20,5 @@ output "spacelift_stack" {
 }
 
 output "spacelift_context" {
-  value = data.spacelift_context.spacelift
+  value = data.spacelift_stack.proxmox_infra
 }
