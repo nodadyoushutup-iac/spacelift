@@ -12,7 +12,7 @@ data "spacelift_stack" "spacelift" {
 
 
 resource "spacelift_context_attachment" "spacelift_spacelift" {
-  context_id = data.spacelift_context.contexts.context_id.spacelift.id
+  context_id = data.spacelift_context.spacelift.id
   stack_id   = data.spacelift_stack.spacelift.id
   priority   = 0
 }
