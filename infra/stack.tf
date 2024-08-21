@@ -1,9 +1,5 @@
 # # stack.tf
 
-# output "yaml" {
-#   value = local.spacelift.stack
-# }
-
 # resource "spacelift_stack" "stack" {
 #   # for_each = {
 #   #   for stack in local.spacelift.stack : stack.stack_id => stack
@@ -25,3 +21,26 @@
 #     namespace = each.value.enterprise
 #   }
 # }
+
+resource "spacelift_stack" "database" {
+  for_each = {
+    for component in local.config.component :
+        component.name => component
+        if component.name == "database"
+    }
+
+    space_id           = "root"
+    administrative     = false
+    autodeploy         = true
+    branch             = "main"
+    description        = "Database infrastructure"
+    name               = "database_infra"
+    repository         = "database"
+    project_root       = "infra"
+    terraform_version  = "1.5.7"
+    labels          = ["all", "infra", "database"]
+#   labels             = concat(each.value.labels, ["all"])
+    github_enterprise { 
+        namespace = "nodadyoushutup-terraform"
+    }
+}
