@@ -32,7 +32,7 @@ resource "spacelift_stack" "database" {
     space_id           = try(local.config.stack.database.space_id, "root")
     administrative     = try(local.config.stack.database.administrative, false)
     autodeploy         = try(local.config.stack.database.autodeploy, true)
-    branch             = try(local.config.stack.database.branch, "database")
+    branch             = try(local.config.stack.database.branch, "main")
     description        = try(local.config.stack.database.description, "Database infrastructure")
     name               = try(local.config.stack.database.name, "database_infra")
     repository         = try(local.config.stack.database.repository, "database")
