@@ -23,12 +23,12 @@
 # }
 
 locals {
-  database_present = contains(local.config.component, "database")
+  component = {database = contains(local.config.component, "database")}
 }
 
 
 resource "spacelift_stack" "database" {
-    count = local.database_present ? 1 : 0
+    count = local.component.database ? 1 : 0
     space_id           = try(local.config.stack.database.space_id, "root")
     administrative     = try(local.config.stack.database.administrative, false)
     autodeploy         = try(local.config.stack.database.autodeploy, true)
