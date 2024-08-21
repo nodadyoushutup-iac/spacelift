@@ -29,18 +29,17 @@ locals {
 
 resource "spacelift_stack" "database" {
     count = local.database_present ? 1 : 0
-    space_id           = "root"
-    administrative     = false
-    autodeploy         = true
-    branch             = "main"
-    description        = "Database infrastructure"
-    name               = "database_infra"
-    repository         = "database"
-    project_root       = "infra"
-    terraform_version  = "1.5.7"
-    labels          = ["all", "infra", "database"]
-#   labels             = concat(each.value.labels, ["all"])
+    space_id           = try(local.config.stack.database.space_id, "root")
+    administrative     = try(local.config.stack.database.administrative, false)
+    autodeploy         = try(local.config.stack.database.autodeploy, true)
+    branch             = try(local.config.stack.database.branch, "database")
+    description        = try(local.config.stack.database.description, "Database infrastructure")
+    name               = try(local.config.stack.database.name, "database_infra")
+    repository         = try(local.config.stack.database.repository, "database")
+    project_root       = try(local.config.stack.database.project_root, "infra")
+    terraform_version  = try(local.config.stack.database.terraform_version, "1.5.7")
+    labels          = try(local.config.stack.database.labels, ["all", "infra", "database"])
     github_enterprise { 
-        namespace = "nodadyoushutup-terraform"
+        namespace = try(local.config.stack.database.github_enterprise.namespace, "nodadyoushutup-terraform")
     }
 }
