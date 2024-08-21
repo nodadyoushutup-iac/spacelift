@@ -22,13 +22,13 @@
 #   }
 # }
 
-resource "spacelift_stack" "database" {
-  for_each = {
-    for component in local.config.component :
-        component.name => component
-        if component.name == "database"
-    }
+locals {
+  database_present = contains(local.config.components, "database")
+}
 
+
+resource "spacelift_stack" "database" {
+    count = local.database_present ? 1 : 0
     space_id           = "root"
     administrative     = false
     autodeploy         = true
