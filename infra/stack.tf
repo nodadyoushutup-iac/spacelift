@@ -22,19 +22,6 @@
 #   }
 # }
 
-locals {
-    component = {
-        database = contains(local.config.component, "database")
-        vault = contains(local.config.component, "vault")
-        npm = contains(local.config.component, "npm")
-        development = contains(local.config.component, "development")
-        fortigate = contains(local.config.component, "fortigate")
-        k3s = contains(local.config.component, "k3s")
-        monitoring = contains(local.config.component, "monitoring")
-    }
-}
-
-
 resource "spacelift_stack" "database" {
     count = local.component.database ? 1 : 0
     space_id           = try(local.config.stack.database.space_id, "root")
@@ -46,7 +33,7 @@ resource "spacelift_stack" "database" {
     repository         = try(local.config.stack.database.repository, "database")
     project_root       = try(local.config.stack.database.project_root, "infra")
     terraform_version  = try(local.config.stack.database.terraform_version, try(local.config.global.terraform.version, "1.5.7"))
-    labels          = try(local.config.stack.database.labels, ["all", "infra", "database"])
+    labels          = try(concat(local.config.stack.database.labels, ["all", "infra", "database"]), ["all", "infra", "database"])
     github_enterprise { 
         namespace = try(local.config.stack.database.github_enterprise.namespace, "nodadyoushutup-terraform")
     }
