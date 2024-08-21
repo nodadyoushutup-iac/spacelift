@@ -23,7 +23,7 @@
 # }
 
 locals {
-  database_present = contains(local.config.components, "database")
+  database_present = contains(local.config.component, "database")
 }
 
 
