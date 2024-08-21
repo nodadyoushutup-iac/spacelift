@@ -1,16 +1,16 @@
 # # # context.tf
 
-# resource "spacelift_context" "debug" {
-#   description = "Debug congfiguration"
-#   name = "debug"
-#   space_id = "root"
-# }
+resource "spacelift_context" "debug" {
+  description = "Debug congfiguration"
+  name = "debug"
+  space_id = "root"
+}
 
-# resource "spacelift_context" "provider" {
-#   description = "Provider congfiguration"
-#   name = "provider"
-#   space_id = "root"
-# }
+resource "spacelift_context" "provider" {
+  description = "Provider congfiguration"
+  name = "provider"
+  space_id = "root"
+}
 
 # resource "spacelift_context" "spacelift" {
 #   description = "Spacelift congfiguration"
@@ -35,3 +35,9 @@
 #   name = "vault"
 #   space_id = "root"
 # }
+
+resource "spacelift_context" "config" {
+  description = "Vault congfiguration"
+  name = "vault"
+  space_id = "root"
+}
