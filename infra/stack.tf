@@ -17,7 +17,6 @@ resource "spacelift_stack" "database" {
     }
 }
 
-
 resource "spacelift_context_attachment" "config_database" {
   count = local.component.database ? 1 : 0
   context_id = "config"

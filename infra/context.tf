@@ -37,7 +37,7 @@ resource "spacelift_context" "provider" {
 # }
 
 resource "spacelift_context" "config" {
-  description = "Vault congfiguration"
-  name = "vault"
+  description = "Configuration"
+  name = "config"
   space_id = "root"
 }
