@@ -2,7 +2,7 @@ module "stack" {
     source  = "spacelift.io/nodadyoushutup/stack/spacelift"
     for_each = { 
         for stack_name, stack_config in local.config.stack : stack_name => stack_config 
-        if !contains(local.config.component.name, stack_name)
+        if !contains(local.config.component, stack_name)
     }
 
     ## REQUIRED ##
