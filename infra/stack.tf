@@ -21,13 +21,13 @@ resource "spacelift_stack" "database" {
 resource "spacelift_context_attachment" "config_database" {
   count = local.component.database ? 1 : 0
   context_id = "config"
-  stack_id   = "database"
+  stack_id   = "database_infra"
   priority   = 100
 }
 
 resource "spacelift_context_attachment" "provider_database" {
   count = local.component.database ? 1 : 0
   context_id = "provider"
-  stack_id   = "database"
+  stack_id   = "database_infra"
   priority   = 100
 }
