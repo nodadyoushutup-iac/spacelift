@@ -81,6 +81,15 @@ module "database_infra" {
       null
     )
   }
+  ansible = { 
+    playbook = try(
+      try(
+        local.config.stack.database.ansible.playbook, 
+        local.config.global.stack.ansible.playbook
+      ),
+      null
+    )
+  }
 }
 
 module "vault_infra" {
