@@ -9,7 +9,7 @@ module "stack" {
     autodeploy          = each.value.autodeploy
     branch              = each.value.branch
     description         = each.value.description
-    name                = each.value.name
+    # name                = each.value.name
     repository          = each.value.repository
     project_root        = each.value.project_root
     terraform_version   = each.value.terraform_version
