@@ -6,12 +6,6 @@ resource "spacelift_context" "debug" {
   space_id = "root"
 }
 
-resource "spacelift_context" "provider" {
-  description = "Provider congfiguration"
-  name = "provider"
-  space_id = "root"
-}
-
 resource "spacelift_context" "config" {
   description = "Configuration"
   name = "config"

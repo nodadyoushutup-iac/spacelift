@@ -23,10 +23,3 @@ resource "spacelift_context_attachment" "config_database" {
   stack_id   = "database_infra"
   priority   = 100
 }
-
-resource "spacelift_context_attachment" "provider_database" {
-  count = contains(local.config.component, "database") ? 1 : 0
-  context_id = "provider"
-  stack_id   = "database_infra"
-  priority   = 100
-}
