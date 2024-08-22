@@ -84,6 +84,6 @@
 # }
 
 
-output "branch" {
-  value = local.config.stack.database
+output "output" {
+  value = local.config
 }
