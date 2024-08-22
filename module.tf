@@ -67,3 +67,18 @@ resource "spacelift_module" "spacelift_stack" {
         namespace = "nodadyoushutup-terraform"
     }
 }
+
+resource "spacelift_module" "spacelift_component" {
+    name               = "component"
+    terraform_provider = "spacelift"
+    administrative     = false
+    branch             = "main"
+    description        = "Spacelift component"
+    repository         = "module"
+    project_root       = "spacelift/component"
+    labels             = ["infra", "spacelift"]
+    github_enterprise { 
+        namespace = "nodadyoushutup-terraform"
+    }
+}
+
