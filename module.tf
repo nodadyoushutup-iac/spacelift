@@ -8,7 +8,7 @@ resource "spacelift_module" "proxmox_virtual_machine" {
     project_root = "proxmox/virtual_machine"
     labels = ["infra", "proxmox"]
     github_enterprise { 
-        namespace = "nodadyoushutup-terraform"
+        namespace = "nodadyoushutup-iac"
     }
 }
 
@@ -22,7 +22,7 @@ resource "spacelift_module" "fortigate_vip" {
     project_root       = "fortigate/vip"
     labels             = ["config", "fortigate"]
     github_enterprise { 
-        namespace = "nodadyoushutup-terraform"
+        namespace = "nodadyoushutup-iac"
     }   
 }
 
@@ -36,7 +36,7 @@ resource "spacelift_module" "fortigate_policy" {
     project_root       = "fortigate/policy"
     labels             = ["config", "fortigate"]
     github_enterprise { 
-        namespace = "nodadyoushutup-terraform"
+        namespace = "nodadyoushutup-iac"
     }
 }
 
@@ -50,7 +50,7 @@ resource "spacelift_module" "fortigate_port_forward" {
     project_root       = "fortigate/port_forward"
     labels             = ["config", "fortigate"]
     github_enterprise { 
-        namespace = "nodadyoushutup-terraform"
+        namespace = "nodadyoushutup-iac"
     }
 }
 
@@ -64,7 +64,7 @@ resource "spacelift_module" "spacelift_stack" {
     project_root       = "spacelift/stack"
     labels             = ["infra", "spacelift"]
     github_enterprise { 
-        namespace = "nodadyoushutup-terraform"
+        namespace = "nodadyoushutup-iac"
     }
 }
 
@@ -78,7 +78,7 @@ resource "spacelift_module" "spacelift_component" {
     project_root       = "spacelift/component"
     labels             = ["infra", "spacelift"]
     github_enterprise { 
-        namespace = "nodadyoushutup-terraform"
+        namespace = "nodadyoushutup-iac"
     }
 }
 
