@@ -11,7 +11,7 @@ resource "spacelift_environment_variable" "log_level_terraform" {
 resource "spacelift_environment_variable" "log_level_ansible" {
   context_id  = "config"
   name        = "ANSIBLE_LOG_VERBOSITY"
-  value       = try(local.config.global.log_level.ansible, "info")
+  value       = try(local.config.global.log_level.ansible, 0)
   write_only  = false
   description = "Log level"
 }
