@@ -6,21 +6,21 @@ module "stack" {
     }
 
     ## REQUIRED ##
-    name                = each.value.name
-    repository          = each.value.repository
+    name                = try(each.value.name)
+    repository          = try(each.value.repository)
 
     ## UNIQUE ##
-    project_root        = each.value.project_root
-    description         = each.value.description
-    labels              = each.value.labels
+    project_root        = try(each.value.project_root)
+    description         = try(each.value.description)
+    labels              = try(each.value.labels)
 
     ## OPTIONAL ##
-    space_id            = each.value.space_id
-    administrative      = each.value.administrative
-    autodeploy          = each.value.autodeploy
-    branch              = each.value.branch
-    terraform_version   = each.value.terraform_version
+    space_id            = try(each.value.space_id)
+    administrative      = try(each.value.administrative)
+    autodeploy          = try(each.value.autodeploy)
+    branch              = try(each.value.branch)
+    terraform_version   = try(each.value.terraform_version)
     github_enterprise = {
-        namespace = each.value.github_enterprise.namespace
+        namespace = try(each.value.github_enterprise.namespace)
     }
 }
