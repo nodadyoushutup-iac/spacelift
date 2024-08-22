@@ -85,5 +85,5 @@
 
 
 output "branch" {
-  value = local.config.stack.database.infra.branch
+  value = local.config.stack.database
 }
