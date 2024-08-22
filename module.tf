@@ -53,3 +53,18 @@ resource "spacelift_module" "fortigate_port_forward" {
         namespace = "nodadyoushutup-terraform"
     }
 }
+
+
+resource "spacelift_module" "spacelift_stack" {
+    name               = "stack"
+    terraform_provider = "spacelift"
+    administrative     = false
+    branch             = "main"
+    description        = "Spacelift stack"
+    repository         = "module"
+    project_root       = "spacelift/stack"
+    labels             = ["infra", "spacelift"]
+    github_enterprise { 
+        namespace = "nodadyoushutup-terraform"
+    }
+}
