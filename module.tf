@@ -54,7 +54,6 @@ resource "spacelift_module" "fortigate_port_forward" {
     }
 }
 
-
 resource "spacelift_module" "spacelift_stack" {
     name               = "stack"
     terraform_provider = "spacelift"
