@@ -1,5 +1,5 @@
-module "database" {
+module "components" {
   source  = "spacelift.io/nodadyoushutup/component/spacelift"
-  count = try(contains(local.config.component, "database")) ? 1 : 0
-  component = "database"
+  for_each = { for component in local.config.component : component => component }
+  component = each.value
 }
