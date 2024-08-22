@@ -6,7 +6,7 @@ module "stack" {
     }
 
     ## REQUIRED ##
-    name        = lookup(each.value, "name", stack_name)
+    name        = each.value.name
     repository  = each.value.repository
 
     ## UNIQUE ##
